@@ -15,7 +15,7 @@ class AMTestExample(unittest.TestCase):
         pass
     
     def test_fail(self):
-        self.fail()
+        self.fail('Unexpected failure')
     
     @unittest.skip('Skipped')
     def test_skip(self):
@@ -23,7 +23,7 @@ class AMTestExample(unittest.TestCase):
     
     @unittest.expectedFailure
     def test_xfail(self):
-        self.fail()
+        self.fail('Expected failure')
     
     @unittest.expectedFailure
     def test_xpass(self):
