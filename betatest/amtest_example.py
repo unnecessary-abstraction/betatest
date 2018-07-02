@@ -1,0 +1,28 @@
+import unittest
+
+from betatest.amtest import AMTestRunner
+
+class AMTestExample(unittest.TestCase):
+    def test_pass(self):
+        pass
+    
+    def test_fail(self):
+        self.fail()
+    
+    @unittest.skip('Skipped')
+    def test_skip(self):
+        pass
+    
+    @unittest.expectedFailure
+    def test_xfail(self):
+        self.fail()
+    
+    @unittest.expectedFailure
+    def test_xpass(self):
+        pass
+    
+    def test_error(self):
+        return 1.0 / 0.0
+
+if __name__ == '__main__':
+    unittest.main(testRunner=AMTestRunner)
