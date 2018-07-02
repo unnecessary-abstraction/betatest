@@ -1,3 +1,11 @@
+#
+# Test runner with Automake "Simple tests" format output.
+#
+# Copyright (c) 2018 Beta Five Ltd
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 import sys
 import unittest
 

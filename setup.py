@@ -1,3 +1,11 @@
+#
+# betatest setup script
+#
+# Copyright (c) 2018 Beta Five Ltd
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
 import re
 import runpy
 import setuptools
