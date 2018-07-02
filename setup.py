@@ -42,12 +42,12 @@ setuptools.setup(
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: Apache Software License',
-        'Operating System :: POSIX :: Linux',
+        'Operating System :: OS Independent',
         'Programming Language :: Python :: 3',
         'Topic :: Software Development :: Testing'
     ),
     python_requires = '>=3.6',
     license = 'Apache License 2.0',
-    platforms = ('Linux'),
+    platforms = ('Any'),
     include_package_data=True,
 )
