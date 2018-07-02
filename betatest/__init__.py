@@ -7,4 +7,5 @@
 #
 
 from betatest.version import __version__
-import amtest
+
+import betatest.amtest
