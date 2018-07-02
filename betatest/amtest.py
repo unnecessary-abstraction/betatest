@@ -15,8 +15,9 @@ class AMTestResult(unittest.TestResult):
     def addError(self, test, err):
         super(AMTestResult, self).addError(test, err)
         self.runner.write("ERROR: %s: %s\n" % (str(test), str(err[1])))
-        import traceback
-        traceback.print_tb(err[2])
+        if self.runner.show_tracebacks:
+            import traceback
+            traceback.print_tb(err[2])
 
     def addSuccess(self, test):
         super(AMTestResult, self).addSuccess(test)
@@ -45,8 +46,9 @@ class AMTestRunner:
     for further details on this format.
     """
 
-    def __init__(self, stream=sys.stderr):
+    def __init__(self, stream=sys.stderr, show_tracebacks=False):
         self.stream = stream
+        self.show_tracebacks = show_tracebacks
 
     def write(self, message):
         self.stream.write(message)
