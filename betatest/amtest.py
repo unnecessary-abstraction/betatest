@@ -41,7 +41,7 @@ class AMTestResult(unittest.TestResult):
 
     def addExpectedFailure(self, test, err):
         super(AMTestResult, self).addExpectedFailure(test, err)
-        self.runner.write("XFAIL: %s\n" % (str(test)))
+        self.runner.write("XFAIL: %s: %s\n" % (str(test), str(err[1])))
 
     def addUnexpectedSuccess(self, test):
         super(AMTestResult, self).addUnexpectedSuccess(test)
