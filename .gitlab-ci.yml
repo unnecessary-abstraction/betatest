@@ -1,0 +1,6 @@
+image: python:3.6
+
+pylint:
+    script:
+        - pip install pylint
+        - pylint betatest
