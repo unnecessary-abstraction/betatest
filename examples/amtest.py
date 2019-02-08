@@ -6,8 +6,12 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+import os
+import sys
 import unittest
 
+# Expect to find betatest in the working directory when running these examples
+sys.path.insert(0, os.getcwd())
 from betatest.amtest import AMTestRunner
 
 class AMTestExample(unittest.TestCase):
