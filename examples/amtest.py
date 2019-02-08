@@ -1,7 +1,7 @@
 #
 # Example code using the AMTestRunner class
 #
-# Copyright (c) 2018 Beta Five Ltd
+# Copyright (c) 2018-2019 Beta Five Ltd
 #
 # SPDX-License-Identifier: Apache-2.0
 #
@@ -14,12 +14,9 @@ import unittest
 sys.path.insert(0, os.getcwd())
 from betatest.amtest import AMTestRunner
 
-class AMTestExample(unittest.TestCase):
+class TestPasses(unittest.TestCase):
     def test_pass(self):
         pass
-    
-    def test_fail(self):
-        self.fail('Unexpected failure')
     
     @unittest.skip('Skipped')
     def test_skip(self):
@@ -29,12 +26,22 @@ class AMTestExample(unittest.TestCase):
     def test_xfail(self):
         self.fail('Expected failure')
     
+class TestFails(unittest.TestCase):
+    def test_fail(self):
+        self.fail('Unexpected failure')
+    
     @unittest.expectedFailure
     def test_xpass(self):
         pass
     
     def test_error(self):
         return 1.0 / 0.0
+
+# Allow a '--pass' argument to disable tests that will fail. This is useful for
+# running the example in CI.
+if len(sys.argv) > 1 and sys.argv[1] == '--pass':
+    del TestFails
+    del sys.argv[1]
 
 if __name__ == '__main__':
     unittest.main(testRunner=AMTestRunner)
