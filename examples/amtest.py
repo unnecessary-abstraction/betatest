@@ -1,10 +1,9 @@
-#
-# Example code using the AMTestRunner class
-#
 # Copyright (c) 2018-2019 Beta Five Ltd
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+
+"""Example code using the AMTestRunner class."""
 
 import os
 import sys
