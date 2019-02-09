@@ -1,10 +1,9 @@
-#
-# Test runner with Automake "Simple tests" format output.
-#
 # Copyright (c) 2018-2019 Beta Five Ltd
 #
 # SPDX-License-Identifier: Apache-2.0
 #
+
+"""Test runner with Automake "Simple tests" format output."""
 
 import sys
 import unittest
@@ -68,9 +67,11 @@ class AMTestRunner:
         self.verbose_subtests = verbose_subtests
 
     def write(self, message):
+        "Print a message to the test runner's output stream."
         self.stream.write(message)
 
     def run(self, test):
+        "Run the given test case or test suite."
         result = AMTestResult(self)
         test(result)
         return result
