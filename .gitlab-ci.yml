@@ -1,0 +1,12 @@
+image: python:3.6
+
+pylint:
+    script:
+        - pip install pylint
+        - pylint betatest
+
+test:
+    script:
+        # For now just run the examples in pass-only mode
+        - python examples/amtest.py --pass
+        - python examples/subtest.py --pass
